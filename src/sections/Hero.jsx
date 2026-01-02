@@ -1,3 +1,3 @@
 export const Hero = () => {
-    return <section>Hi Everyone</section>;
+    return <section></section>;
 }
