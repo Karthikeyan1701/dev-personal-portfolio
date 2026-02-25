@@ -1,22 +1,14 @@
-import { Navbar } from '@/layout/Navbar';
-import { Hero } from "@/sections/Hero";
-import { About } from "@/sections/About";
-import { Experience } from "@/sections/Experience";
-import { Projects } from "@/sections/Projects";
-import { Testimonials } from "@/sections/Testimonials";
-import { Contact } from "@/sections/Contact";
+import React from 'react';
+import Navbar from './components/layout/Navbar';
+import Hero from './components/sections/Hero';
 
 function App() {
   return (
-    <div className="min-h-screen overflow-x-hidden">
+    <div className="min-h-screen bg-black">
       <Navbar />
+
       <main>
         <Hero />
-        <About />
-        <Experience />
-        <Projects />
-        <Testimonials />
-        <Contact />
       </main>
     </div>
   );
