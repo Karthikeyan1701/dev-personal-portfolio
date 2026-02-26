@@ -18,5 +18,10 @@ export const services = [
         id: 4,
         icon: 'Zap',
         title: 'Performance Optimization'
+    }, 
+    {
+        id: 5,
+        icon: 'Gitbranch',
+        tilte: 'Code Review & Consulting'
     }
 ];
