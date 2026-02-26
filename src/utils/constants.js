@@ -12,14 +12,14 @@ export const SOCIAL_LINKS = {
 };
 
 export const STATS = [
-    { label: 'Years Experience', value: '3+' },
+    { label: 'Years of Experience', value: '3+' },
     { label: 'Modules Developed', value: '20+' },
     { label: 'Technologies', value: '15+' },
     { label: 'APIs Designed', value: '30+' }
 ];
 
 export const ABOUT_STATS = [
-    { label: 'Hours of Coding Practice', value: '3000+' },
+    { label: 'Practice Hours', value: '2.4K+' },
     { label: 'Code Refactors', value: '60+' },
     { label: 'Features Delivered', value: '75+' }
 ];
