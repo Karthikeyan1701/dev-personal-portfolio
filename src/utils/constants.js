@@ -2,7 +2,14 @@ export const PERSONAL_INFO = {
     name: 'Karthikeyan S',
     title: 'React Developer & Full Stack Enthusiast',
     email: 'karthikvijay171@gmail.com',
-    location: 'Tiruchi, India'
+    location: 'Tiruchi, India',
+    tagline: 'Crafting seamless digital experiences with modern web technologies using JavaScript',
+    bio: [
+        'I am a passionate Full Stack Developer with over 3 years of experience building scalable and high-performance web applications, and focus on crafting intuitive user interfaces that balance clean design with reliable and efficient functionality.',
+        'My expertise spans the entire front end ecosystem with React.js, back end with Node.js and modern CSS frameworks. I am committed to writing clean and maintainable code and staying current with the latest web technologies.',
+        'Beyond development, I actively explore new technologies, contribute to learning communities, and deepen my understanding of software system design and best practices.'
+    ],
+    resume: '/ks-dev-resume.pdf'
 }
 
 export const SOCIAL_LINKS = {
