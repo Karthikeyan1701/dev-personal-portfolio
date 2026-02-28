@@ -1,4 +1,3 @@
-import React from 'react';
 import { ChevronDown, Star } from 'lucide-react';
 import {
   SiJavascript,
@@ -17,7 +16,7 @@ import RadialGradientBg from '../backgrounds/RadialGradientBg';
 const Hero = () => {
   return (
     <section className="relative min-h-screen flex items-center overflow-hidden bg-black">
-      <RadialGradientBg variant='hero' />
+      <RadialGradientBg variant="hero" />
 
       {/* Content Container */}
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 w-full">
@@ -87,14 +86,17 @@ const Hero = () => {
 
                 {/* Image Container */}
                 <div className="relative rounded-2xl overflow-hidden m-px h-[calc(100%-2px)]">
-                  <img src="/profile-photo.jpg" alt="Developer to work" className="w-full h-full object-cover" />
+                  <img
+                    src="/profile-photo.jpg"
+                    alt="Developer to work"
+                    className="w-full h-full object-cover"
+                  />
                 </div>
 
                 {/* Technology Logos */}
                 <div className="absolute bottom-6 left-6 z-20">
                   <FadeIn delay={500}>
                     <div className="flex items-center gap-4 bg-black/40 backdrop-blur-sm border border-white/10 rounded-full px-6 py-3">
-
                       <div className="w-6 h-6 flex items-center justify-center hover:scale-110 transition-transform duration-300">
                         <SiHtml5 className="w-full h-full text-primary" />
                       </div>
@@ -134,9 +136,9 @@ const Hero = () => {
       {/* Scroll Indicator */}
       <button
         onClick={() => scrollToSection('about')}
-        className='absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce'
+        className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce"
       >
-        <ChevronDown className='w-8 h-8 text-primary' />
+        <ChevronDown className="w-8 h-8 text-primary" />
       </button>
     </section>
   );

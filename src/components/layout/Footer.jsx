@@ -107,7 +107,7 @@ const Footer = () => {
           <div className='pt-8 border-t border-white/10'>
             <div className='flex flex-col md:flex-row items-center justify-between gap-4'>
               <p className='text-white/50 text-sm'>
-                &copy; {new Date().getFullYear()} {PERSONAL_INFO.email}. All rights reserved.
+                &copy; {new Date().getFullYear()} {PERSONAL_INFO.name}. All rights reserved.
               </p>
               <p className='flex items-center gap-2 text-white/50 text-sm'>
                 Built with <Heart className='w-4 h-4 text-primary fill-primary animate-pulse' /> using React & Tailwind CSS
