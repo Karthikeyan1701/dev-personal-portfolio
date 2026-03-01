@@ -51,7 +51,85 @@ const Skills = () => {
   };
 
   return (
-    <div>Skills</div>
+    <section id="skills" className="">
+      {/* Animated Background Gradients */}
+      <div className="">
+        <div className="" />
+        <div className="" />
+      </div>
+
+      <div className="">
+        <FadeIn delay={100}>
+            <div className="">
+                <div className="">
+                    <Icons.Sparkles className="" />
+                    <span className="">My Expertise</span>
+                </div>
+                <h2 className="">
+                  Skills & Technologies
+                </h2>
+                <p className="">
+                  A comprehensive overview of my technical skills and proficiency skills
+                </p>
+            </div>
+        </FadeIn>
+
+        {/* Skills Categories */}
+        <div className="">
+            {Object.entries(skillCategories).map(([category, categorySkills], categoryIndex) => (
+              <FadeIn key={category} delay={categoryIndex * 100}>
+                  <div className="">
+                    <div className="">
+                      <div className=""></div>
+                      <h3 className="">{category}</h3>
+                    </div>
+
+                    {/* Skills List */}
+                    <div className="">
+                      {categorySkills.map((skill, skillIndex) => {
+                        const IconComponent = Icons[skill.icon] || Icons.Code2;
+                        const proficiency = getProficiencyLevel(skill.level);
+
+                        return (
+                          <div key={skill.id} className="">
+                            <div className="">
+                              <div className="">
+                                <div className="">
+                                  <IconComponent className="" />
+                                </div>
+                                <div>
+                                  <div className="">
+                                    {skill.name}
+                                  </div>
+                                  <div className="">
+                                    {skill.experience}
+                                  </div>
+                                </div>
+                              </div>
+                              <span className={`text-xs px-2 py-1 rounded-full border ${getLevelColor(skill.level)}`}>
+                                {skill.level}
+                              </span>
+                            </div>
+
+                            <div className="">
+                              <div
+                                className=""
+                                style={{ width: `${proficiency}%` }}
+                              ></div>
+                            </div>
+                          </div>
+                        );
+                      })}
+                    </div>
+
+                    {/* Hover Glow Effect */}
+                    <div className=""></div>
+                  </div>
+              </FadeIn>
+            ))}
+        </div>
+      </div>
+    </section>
   );
 };
 
