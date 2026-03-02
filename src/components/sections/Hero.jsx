@@ -2,8 +2,7 @@ import { ChevronDown, Star } from 'lucide-react';
 import {
   SiJavascript,
   SiReact,
-  SiHtml5,
-  SiCss3,
+  SiNextdotjs,
   SiNodedotjs,
   SiExpress,
   SiMongodb,
@@ -12,8 +11,15 @@ import { PERSONAL_INFO, STATS } from '../../utils/constants';
 import { scrollToSection } from '../../hooks/useScrollSpy';
 import FadeIn from '../animations/FadeIn';
 import RadialGradientBg from '../backgrounds/RadialGradientBg';
+import { useTypingText } from '../../hooks/useTypingText';
 
 const Hero = () => {
+  const text = useTypingText([
+    "Full Stack Developer",
+    "JavaScript Engineer",
+    "Modern Web Builder"
+  ]);
+
   return (
     <section className="relative min-h-screen flex items-center overflow-hidden bg-black">
       <RadialGradientBg variant="hero" />
@@ -34,7 +40,7 @@ const Hero = () => {
 
             <FadeIn delay={100}>
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-normal text-white mb-6 leading-tight">
-                I'm Karthikeyan S - Full Stack Developer
+                I'm <span className='text-primary'>Karthikeyan S</span> - <span className='blinking-cursor'>{text}</span>
               </h1>
             </FadeIn>
 
@@ -98,19 +104,15 @@ const Hero = () => {
                   <FadeIn delay={500}>
                     <div className="flex items-center gap-4 bg-black/40 backdrop-blur-sm border border-white/10 rounded-full px-6 py-3">
                       <div className="w-6 h-6 flex items-center justify-center hover:scale-110 transition-transform duration-300">
-                        <SiHtml5 className="w-full h-full text-primary" />
-                      </div>
-
-                      <div className="w-6 h-6 flex items-center justify-center hover:scale-110 transition-transform duration-300">
-                        <SiCss3 className="w-full h-full text-primary" />
-                      </div>
-
-                      <div className="w-6 h-6 flex items-center justify-center hover:scale-110 transition-transform duration-300">
                         <SiJavascript className="w-full h-full text-primary" />
                       </div>
 
                       <div className="w-6 h-6 flex items-center justify-center hover:scale-110 transition-transform duration-300">
                         <SiReact className="w-full h-full text-primary" />
+                      </div>
+
+                      <div className="w-6 h-6 flex items-center justify-center hover:scale-110 transition-transform duration-300">
+                        <SiNextdotjs className="w-full h-full text-primary" />
                       </div>
 
                       <div className="w-6 h-6 flex items-center justify-center hover:scale-110 transition-transform duration-300">

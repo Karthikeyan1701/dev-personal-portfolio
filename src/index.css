@@ -67,7 +67,6 @@
   }
 
   @keyframes pulse {
-
     0%,
     100% {
       opacity: 0.3;
@@ -115,4 +114,18 @@
     -webkit-box-orient: vertical;
     overflow: hidden;
   }  
+}
+
+@layer components {
+  .blinking-cursor:after {
+    content: '|';
+    @apply text-primary;
+    animation: blink 1s infinite;
+  }
+
+  @keyframes blink {
+    50% {
+      opacity: 0;
+    }
+  }
 }
