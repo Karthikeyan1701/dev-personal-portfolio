@@ -17,7 +17,7 @@ export const skills = [
         id: 3,
         name: 'React.js',
         icon: 'Code2',
-        title: 'Expert',
+        level: 'Expert',
         experience: '3+ years'
     },
     {
@@ -113,10 +113,10 @@ export const skills = [
     },
     {
         id: 17,
-        name: 'SQL',
+        name: 'Microsoft SQL Server',
         icon: 'Database',
         level: 'Intermediate',
-        experience: ''
+        experience: '1+ years'
     },
     {
         id: 18,
