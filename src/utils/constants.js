@@ -35,6 +35,7 @@ export const NAV_LINKS = [
     { id: 'about', label: 'About' },
     { id: 'skills', label: 'Skills' },
     { id: 'services', label: 'Services' },
-    { id: 'experience', label: 'Experience' },
+    { id: 'timeline', label: 'Timeline' },
+    { id: 'insights', label: 'Insights' },
     { id: 'contact', label: 'Contact' }
 ];
