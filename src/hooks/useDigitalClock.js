@@ -18,9 +18,10 @@ const useDigitalClock = () => {
   });
 
   const date = now.toLocaleDateString([], {
-    weekday: "short",
-    month: "short",
+    weekday: "long",
+    month: "long",
     day: "numeric",
+    year: "numeric"
   });
 
   return { time, date };
