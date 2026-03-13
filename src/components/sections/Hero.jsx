@@ -1,4 +1,5 @@
 import { ChevronDown, Star } from 'lucide-react';
+import LiveInfo from '../ui/LiveInfo';
 import {
   SiJavascript,
   SiReact,
@@ -29,6 +30,7 @@ const Hero = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           {/* Left Column - Content */}
           <div className="text-left">
+            <LiveInfo />
             <FadeIn delay={0}>
               <div className="inline-flex items-center gap-2.5 px-4.5 py-2.75 mb-8 bg-linear-to-r from-primary/10 via-primary/15 to-primary/20 border border-primary/20 rounded-full">
                 <Star className="w-4 h-4 text-white fill-white" />
@@ -39,8 +41,8 @@ const Hero = () => {
             </FadeIn>
 
             <FadeIn delay={100}>
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-normal text-white mb-6 leading-tight">
-                I'm <span className='text-primary'>Karthikeyan S</span> - <span className='blinking-cursor'>{text}</span>
+              <h1 className="text-3xl md:text-4xl lg:text-5xl font-normal text-white mb-6 leading-tight">
+                I'm <span className='text-primary'>Karthikeyan S</span> - <br /><span className='blinking-cursor'>{text}</span>
               </h1>
             </FadeIn>
 

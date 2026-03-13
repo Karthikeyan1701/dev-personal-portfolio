@@ -1,39 +1,78 @@
-import React, { useState, useRef } from "react";
-import { ChevronLeft, ChevronRight, Lightbulb } from "lucide-react";
-import { insights } from "../../data/insights";
-import FadeIn from "../animations/FadeIn";
+import React, { useState, useRef, useEffect } from 'react';
+import { ChevronLeft, ChevronRight, Lightbulb } from 'lucide-react';
+import { insights } from '../../data/insights';
+import FadeIn from '../animations/FadeIn';
 
 const Insights = () => {
-  const [currentIndex, setCurrentIndex] = useState(0);
   const scrollContainerRef = useRef(null);
 
-  const scrollToIndex = (index) => {
+  const extendedInsights = [
+    insights[insights.length - 1],
+    ...insights,
+    insights[0],
+  ];
+
+  const [currentIndex, setCurrentIndex] = useState(1);
+
+  const scrollToIndex = (index, smooth = true) => {
+    if (!scrollContainerRef.current) return;
+
+    const containerWidth = scrollContainerRef.current.offsetWidth;
+    scrollContainerRef.current.scrollTo({
+      left: containerWidth * index,
+      behavior: smooth ? 'smooth' : 'auto',
+    });
+
     setCurrentIndex(index);
-    if (scrollContainerRef.current) {
-      const containerWidth = scrollContainerRef.current.offsetWidth;
-      scrollContainerRef.current.scrollTo({
-        left: containerWidth * index,
-        behavior: "smooth",
-      });
-    }
   };
 
   const nextInsight = () => {
-    const newIndex = (currentIndex + 1) % insights.length;
-    scrollToIndex(newIndex);
+    scrollToIndex(currentIndex + 1);
   };
 
   const prevInsight = () => {
-    const newIndex =
-      (currentIndex - 1 + insights.length) % insights.length;
-    scrollToIndex(newIndex);
+    scrollToIndex(currentIndex - 1);
   };
 
+  useEffect(() => {
+    if (!scrollContainerRef.current) return;
+
+    const containerWidth = scrollContainerRef.current.offsetWidth;
+
+    if (currentIndex === extendedInsights.length - 1) {
+      setTimeout(() => {
+        (scrollContainerRef.current.scrollTo({
+          left: containerWidth,
+          behavior: 'auto',
+        }),
+          setCurrentIndex(1));
+      }, 400);
+    }
+
+    if (currentIndex === 0) {
+      setTimeout(() => {
+        scrollContainerRef.current.scrollTo({
+          left: containerWidth * insights.length,
+          behavior: 'auto',
+        });
+        setCurrentIndex(insights.length);
+      }, 400);
+    }
+  }, [currentIndex, extendedInsights.length]);
+
+  useEffect(() => {
+    if (scrollContainerRef.current) {
+      const containerWidth = scrollContainerRef.current.offsetWidth;
+
+      scrollContainerRef.current.scrollTo({
+        left: containerWidth,
+        behavior: 'auto',
+      });
+    }
+  }, []);
+
   return (
-    <section
-      id="insights"
-      className="relative py-20 bg-black overflow-hidden"
-    >
+    <section id="insights" className="relative py-20 bg-black overflow-hidden">
       {/* Background Glow */}
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-primary/10 opacity-90 rounded-full blur-3xl" />
@@ -66,18 +105,17 @@ const Insights = () => {
           <div className="relative">
             <div
               ref={scrollContainerRef}
-              className="overflow-x-hidden scroll-smooth"
-              style={{ scrollSnapType: "x mandatory" }}
+              className="overflow-x-hidden"
+              style={{ scrollSnapType: 'x mandatory' }}
             >
               <div className="flex">
-                {insights.map((insight) => (
+                {extendedInsights.map((insight, i) => (
                   <div
-                    key={insight.id}
+                    key={i}
                     className="w-full shrink-0 px-4"
-                    style={{ scrollSnapAlign: "start" }}
+                    style={{ scrollSnapAlign: 'start' }}
                   >
                     <div className="max-w-3xl mx-auto bg-white/5 border border-white/10 rounded-2xl p-8 backdrop-blur-sm">
-
                       {/* Category */}
                       <div className="mb-3">
                         <span className="text-xs uppercase tracking-wider text-primary">
@@ -106,7 +144,6 @@ const Insights = () => {
                           </span>
                         ))}
                       </div>
-
                     </div>
                   </div>
                 ))}
@@ -115,25 +152,26 @@ const Insights = () => {
 
             {/* Pagination Dots */}
             <div className="flex items-center justify-center gap-2 mt-10">
-              {insights.map((_, index) => (
-                <button
-                  key={index}
-                  onClick={() => scrollToIndex(index)}
-                  className={`transition-all duration-300 rounded-full ${
-                    index === currentIndex
-                      ? "bg-white w-6 h-2"
-                      : "bg-white/30 w-2 h-2 hover:bg-white/50"
-                  }`}
-                  aria-label={`Go to insight ${index + 1}`}
-                />
-              ))}
+              {insights.map((_, index) => {
+                const active = currentIndex === index + 1;
+                return (
+                  <button
+                    key={index}
+                    onClick={() => scrollToIndex(index)}
+                    className={`transition-all duration-300 rounded-full ${
+                      active
+                        ? 'bg-white w-6 h-2'
+                        : 'bg-white/30 w-2 h-2 hover:bg-white/50'
+                    }`}
+                  />
+                );
+              })}
             </div>
 
             {/* Navigation Buttons */}
             <button
               onClick={prevInsight}
               className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-2 lg:-translate-x-4 flex items-center justify-center w-10 h-10 lg:w-12 lg:h-12 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full hover:bg-white/20 transition-all duration-300 z-10"
-              aria-label="Previous insight"
             >
               <ChevronLeft className="w-6 h-6 text-white" />
             </button>
