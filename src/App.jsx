@@ -7,6 +7,7 @@ import Services from './components/sections/Services';
 import Insights from './components/sections/Insights';
 import Contact from './components/sections/Contact';
 import Footer from './components/layout/Footer';
+import Timeline from './components/sections/Timeline';
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
         <About />
         <Skills />
         <Services />
+        <Timeline />
         <Insights />
         <Contact />
       </main>

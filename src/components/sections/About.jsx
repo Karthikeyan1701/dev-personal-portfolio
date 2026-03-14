@@ -28,7 +28,7 @@ const About = () => {
               <FadeIn delay={60}>
                 <div className="inline-flex items-center gap-2.5 px-5 py-2.5 border border-primary/30 bg-primary/10 rounded-full w-fit">
                   <Code2 className="w-4 h-4 text-primary" />
-                  <span className="text-sm text-primary font-medium">
+                  <span className="text-sm text-primary font-medium tracking-wider uppercase">
                     Full Stack Developer
                   </span>
                   <Sparkles className="w-4 h-4 text-primary" />
