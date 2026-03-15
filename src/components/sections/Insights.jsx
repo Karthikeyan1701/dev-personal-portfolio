@@ -115,7 +115,7 @@ const Insights = () => {
                     className="w-full shrink-0 px-4"
                     style={{ scrollSnapAlign: 'start' }}
                   >
-                    <div className="max-w-3xl mx-auto bg-white/5 border border-white/10 rounded-2xl p-8 backdrop-blur-sm">
+                    <div className="max-w-3xl mx-auto bg-white/5 border border-white/10 rounded-2xl p-8 backdrop-blur-sm hover:border-primary/30 transition-all duration-300">
                       {/* Category */}
                       <div className="mb-3">
                         <span className="text-xs uppercase tracking-wider text-primary">

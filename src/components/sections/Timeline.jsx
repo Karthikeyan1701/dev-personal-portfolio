@@ -1,4 +1,10 @@
-import { Briefcase, GraduationCap, Laptop, BookOpen } from 'lucide-react';
+import {
+  Briefcase,
+  GraduationCap,
+  Laptop,
+  BookOpen,
+  Clock,
+} from 'lucide-react';
 import FadeIn from '../animations/FadeIn';
 import { timeline } from '../../data/timeline';
 
@@ -11,11 +17,36 @@ const iconMap = {
 
 const Timeline = () => {
   return (
-    <section id="timeline" className="relative py-24 bg-black overflow-hidden">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="timeline" className="relative py-20 bg-black overflow-hidden">
+      {/* Background Gradients */}
+      <div className="absolute inset-0 overflow-hidden">
+        <div className="absolute top-32 right-1/3 w-96 h-96 bg-primary/20 opacity-20 rounded-full blur-3xl" />
+        <div className="absolute bottom-32 left-1/3 w-96 h-96 bg-primary/20 opacity-20 rounded-full blur-3xl" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-primary/10 opacity-20 rounded-full blur-3xl" />
+      </div>
+
+      {/* Optional grid pattern */}
+      <div
+        className="absolute inset-0 opacity-[0.03]"
+        style={{
+          backgroundImage: `
+        linear-gradient(to right, white 1px, transparent 1px),
+        linear-gradient(to bottom, white 1px, transparent 1px)
+      `,
+          backgroundSize: '30px 30px',
+        }}
+      />
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <FadeIn delay={0}>
-          <div className="text-center mb-20">
+          <div className="text-center mb-30">
+            <div className="inline-flex items-center gap-2 px-4 py-2 bg-primary/10 border border-primary/30 rounded-full mb-6">
+              <Clock className="w-4 h-4 text-primary" />
+              <span className="text-sm text-primary font-medium tracking-wider uppercase">
+                Career Timeline
+              </span>
+            </div>
+
             <h2 className="text-4xl lg:text-5xl text-white mb-4">
               Career Journey
             </h2>
@@ -36,7 +67,7 @@ const Timeline = () => {
             const Icon = iconMap[item.type];
 
             return (
-              <div key={item.id} className="relative flex items-start mb-32">
+              <div key={item.id} className="relative flex items-start mb-20">
                 {/* Node */}
                 <div
                   className="absolute left-1/2 -translate-x-1/2
@@ -52,7 +83,7 @@ const Timeline = () => {
                 <FadeIn delay={index * 100}>
                   <div
                     className={`relative z-20 w-[45%] bg-white/5 border border-white/10
-                    rounded-2xl p-8 backdrop-blur-sm
+                    rounded-2xl p-8 backdrop-blur-sm hover:border-primary/30 transition-all duration-300
                     ${isLeft ? 'mr-auto text-right' : 'ml-auto text-left'}`}
                   >
                     {/* Period */}
