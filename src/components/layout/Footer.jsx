@@ -62,6 +62,7 @@ const Footer = () => {
                 {NAV_LINKS.map((link) => (
                   <li key={link.id}>
                     <button
+                      type="button"
                       onClick={() => scrollToSection(link.id)}
                       className='group flex items-center gap-2 text-white/60 hover:text-primary transition-all duration-300'
                     >

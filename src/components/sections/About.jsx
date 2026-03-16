@@ -7,7 +7,7 @@ import { SiExpress, SiJavascript, SiMongodb, SiNextdotjs, SiNodedotjs, SiReact }
 
 const About = () => {
   const skills = [
-    { name: 'JavaScript', icon: SiJavascript, color: '##F0DB4F' },
+    { name: 'JavaScript', icon: SiJavascript, color: '#F0DB4F' },
     { name: 'React.js', icon: SiReact, color: '#61DAFB' },
     { name: 'Next.js', icon: SiNextdotjs, color: '#000000' },
     { name: 'Node.js', icon: SiNodedotjs, color: '##339933' },
@@ -143,7 +143,7 @@ const About = () => {
                 <div className="relative bg-white/5 border border-white/10 rounded-2xl p-6 hover:border-primary/30 transition-all duration-300">
                   <div className="grid grid-cols-3 gap-6 text-center">
                     <div>
-                      <div className="text-2xl font-bold text-primary mb-1">
+                      <div className="text-2xl font-bold text-center text-primary mb-1">
                         &lt;200ms
                       </div>
                       <div className="text-xs text-white/60">

@@ -171,7 +171,7 @@ const Contact = () => {
                   disabled={status.loading}
                   className="w-full px-6 py-3 bg-linear-to-r from-primary/10 to-primary text-white font-medium rounded-xl hover:shadow-2xl hover:shadow-primary/30 transition-all duration-300 flex items-center justify-center gap-2 group"
                 >
-                  <span>{status.loading ? 'Sending' : 'Send Message'}</span>
+                  <span>{status.loading ? 'Sending...' : 'Send Message'}</span>
                   <Send className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
                 </button>
 
@@ -180,7 +180,7 @@ const Contact = () => {
                     className={`p-4 rounded-xl ${
                       status.type === 'success'
                         ? 'bg-green-500/10 border border-green-500/20 text-green-400'
-                        : 'bg-red-500/10 border border-red/500/20 text-red-400'
+                        : 'bg-red-500/10 border border-red-500/20 text-red-400'
                     }`}
                   >
                     {status.message}

@@ -69,7 +69,7 @@ const Timeline = () => {
 
           {timeline.map((item, index) => {
             const isLeft = index % 2 === 0;
-            const Icon = iconMap[item.type];
+            const Icon = iconMap[item.type] || Briefcase;
 
             return (
               <div
@@ -84,7 +84,10 @@ const Timeline = () => {
                   rounded-full flex items-center justify-center z-10 mt-10"
                 >
                   <div className="w-6 h-6 lg:w-8 lg:h-8 bg-primary/20 rounded-full flex items-center justify-center">
-                    <Icon className="w-4 h-4 lg:w-5 lg:h-5 text-primary" />
+                    <Icon
+                      className="w-4 h-4 lg:w-5 lg:h-5 text-primary"
+                      aria-hidden="true"
+                    />
                   </div>
                 </div>
 

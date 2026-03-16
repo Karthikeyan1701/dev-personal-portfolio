@@ -28,6 +28,8 @@ const LiveStatus = () => {
               <img
                 src={`https://openweathermap.org/img/wn/${weather.icon}.png`}
                 alt="weather"
+                width="16"
+                height="16"
                 className="w-4 h-4"
               />
               {weather.temp}°C

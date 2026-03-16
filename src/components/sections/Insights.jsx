@@ -41,11 +41,11 @@ const Insights = () => {
 
     if (currentIndex === extendedInsights.length - 1) {
       setTimeout(() => {
-        (scrollContainerRef.current.scrollTo({
+        scrollContainerRef.current.scrollTo({
           left: containerWidth,
           behavior: 'auto',
-        }),
-          setCurrentIndex(1));
+        });
+        setCurrentIndex(1);
       }, 400);
     }
 
@@ -157,7 +157,7 @@ const Insights = () => {
                 return (
                   <button
                     key={index}
-                    onClick={() => scrollToIndex(index)}
+                    onClick={() => scrollToIndex(index + 1)}
                     className={`transition-all duration-300 rounded-full ${
                       active
                         ? 'bg-white w-6 h-2'

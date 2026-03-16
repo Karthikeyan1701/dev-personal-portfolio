@@ -48,7 +48,7 @@ const Hero = () => {
 
             <FadeIn delay={200}>
               <p className="text-lg text-white/70 max-w-137.5 mb-8">
-                Building modern, scalable web applications with React,
+                Building modern, scalable web applications using React,
                 JavaScript, and cutting-edge technologies. Transforming ideas
                 into exceptional digital experiences.
               </p>
@@ -87,7 +87,7 @@ const Hero = () => {
           {/* Right Column - Developer Image */}
           <FadeIn delay={200}>
             <div className="relative">
-              <div className="relative overflow-hidden rounded-2xl aspect-4/5 max-w-125 ml-auto group">
+              <div className="relative overflow-hidden rounded-2xl aspect-4/5 max-w-125 ml-auto">
                 <div className="absolute inset-0 rounded-2xl overflow-hidden">
                   <div className="absolute -inset-0.5 bg-linear-to-r from-primary/20 via-primary/10 to-primary animate-spin-slow rounded-2xl"></div>
                 </div>
@@ -97,6 +97,9 @@ const Hero = () => {
                   <img
                     src="/profile-photo.jpg"
                     alt="Developer to work"
+                    width="500"
+                    height="600"
+                    loading="eager"
                     className="w-full h-full object-cover"
                   />
                 </div>

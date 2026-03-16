@@ -27,7 +27,7 @@ export const useScrollSpy = (sectionIds, offset = 100) => {
         window.addEventListener('scroll', handleScroll, { passive: true });
 
         return () => {
-            window.addEventListener('scroll', handleScroll);
+            window.removeEventListener('scroll', handleScroll);
         };
     }, [sectionIds, offset]);
 

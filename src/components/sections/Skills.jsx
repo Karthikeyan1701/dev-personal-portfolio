@@ -97,7 +97,7 @@ const Skills = () => {
             </h2>
             <p className="text-lg text-white/60 max-w-2xl mx-auto">
               A comprehensive overview of my technical skills and proficiency
-              skills
+              levels
             </p>
           </div>
         </FadeIn>

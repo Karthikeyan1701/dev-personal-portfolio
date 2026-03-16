@@ -14,7 +14,7 @@ const Navbar = () => {
     }
 
     window.addEventListener('scroll', handleScroll);
-    return () => window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
   const handleNavClick = (sectionId) => {
@@ -91,7 +91,7 @@ const Navbar = () => {
 
         {/* Mobile Menu */}
         <div
-            className={`md:hidden transition-all duration-300 oerflow-hidden ${isMenuOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
+            className={`md:hidden transition-all duration-300 overflow-hidden ${isMenuOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
                 }`}
         >
                 <div className='bg-black/95 backdrop-blur-lg border-t border-white/10 px-5 py-6 space-y-3'>
